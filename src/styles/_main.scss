@@ -1,0 +1,210 @@
+// .inline-block{
+//     display: inline-block;
+// }
+h1{
+    font-family: $headerfont;
+    text-align: center;
+}
+
+//word optons section
+.poem-dashboard{
+    padding: 20px;
+    background: white;
+    max-width: 100%;
+}
+
+//list item styles
+.show{
+    position: relative;
+    background: white;
+    cursor: pointer;
+    width: auto;
+    float: left;
+    margin: 10px;
+    padding: 5px;
+    margin: 5px;
+    padding: 10px;
+    list-style: none;
+    box-shadow: 2px 5px 0px black;
+    left: 0;
+    top: 0;
+    font-family: $basefont;
+    transition: box-shadow .4s, top .3s ease-out, left .3s ease-out;
+    &:hover{
+        box-shadow: 5px 7px 7px #555;
+        top: -2px;
+        left: -2px;
+    }
+}
+
+// general button styling
+button, a.home-link{
+    position: relative;
+    font-family: $basefont;
+    font-size: 1rem;
+    padding: .5rem;
+    margin: 0.5rem 0;
+    background: $mint;
+    border: none;
+    color: $green;
+    z-index: 999;
+    box-shadow: 0px 0px 0 $green;
+    transition: box-shadow .3s;
+    &:hover{
+        box-shadow: 5px 5px 0 $green;
+        transition: box-shadow .1s ease-in-out;
+    }
+    &:active{
+        box-shadow: 7px 7px 10px $green;
+    }
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    height: 100%;
+}
+
+
+a{
+    text-decoration: none;
+    color:$light;
+    &:hover{
+        color: $red;
+    }
+}
+
+.wrapper{
+    max-width: 1080px;
+    width: 90%;
+    margin: 0 auto;
+    transition: width .2s;
+}
+
+// Sweet alerts button style
+.swal-button{
+    background: #FE0046;
+}
+
+.App{
+    height: 100vh;
+    max-height: 100vh;
+    background: $light;
+    overflow-y: scroll;
+}
+
+.row{
+    width: 100%;
+    display: block;
+}
+
+// Fridge Page
+.fridge{
+    max-height: 100vh;
+}
+
+.fridge-header, .poem-header {
+    height: 15vh;
+    width: 100%;
+}
+
+.fridge-logo {
+    width: 70%;
+    float: left;    
+    text-align: left;
+    margin-top: 0;
+    height: 50px;
+}
+
+.fridge-logo img, .poem-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.share-poem, a.home-link, .make-own{
+    display: block;
+    margin: 5px;
+    margin-top: 0;
+    width: calc(50% - 10px);
+    text-align: center;
+    text-decoration: none;
+    float: left;
+    padding: 15px 0;
+    height: 50px;
+    color: black;
+}
+
+.fridge-nav {
+    width: 30%;
+    float: left;
+}
+
+.poem-dashboard{
+    float: left;
+    margin: 1rem 2rem 0 0; 
+    width: calc(30% - 2rem);
+    height: 95vmin;
+    text-align: center;
+    overflow-y: scroll;
+    .show{
+        background: $light;
+    }
+    ul{
+        width: 100%;
+    }
+}
+
+// Share poem page
+.poem-page{
+    position: relative;
+    overflow: hidden;
+    .fridge-container{
+        margin: 0 auto;
+        display: block;
+        float: none;
+        width: 55%;
+        height: 76vh;
+        overflow: hidden;
+    }
+}
+
+.poem-logo {
+    width: 80%;
+    float: left;    
+    text-align: left;
+    margin: 0;
+    height: 50px;
+}
+
+.poem-nav {
+    width: 20%;
+    float: left;
+}
+
+.make-own {
+    width: 100%;
+    float: none;
+} // Share poem page end
+
+.swal-text {
+    text-align: center;
+}
+
+.main-section {
+    height: 95vh;
+    padding-top: 30px;
+}
+
+// contains the fridge element
+// used on poem composition page as well as share poem page
+.fridge-container{
+    background: url(./assets/fridge.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+    padding: 4rem 6rem;
+    height: 100vh;
+    float: left;
+    width: 70%;
+    border-radius: 1rem;
+}

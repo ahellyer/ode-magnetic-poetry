@@ -1,0 +1,504 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden] {
+  display: none; }
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:active, a:hover {
+  outline: 0; }
+
+h1 {
+  font-size: 2em; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: 700; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: \201C \201D \2018 \2019; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -.5em; }
+
+sub {
+  bottom: -.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0; }
+
+button, input {
+  line-height: normal; }
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], input[disabled] {
+  cursor: default; }
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body, figure {
+  margin: 0; }
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '';
+  clear: both;
+  height: 0; }
+
+.visuallyhidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0);
+  overflow: hidden; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif; }
+
+h1 {
+  font-family: "Varela Round", sans-serif;
+  text-align: center; }
+
+.poem-dashboard {
+  padding: 20px;
+  background: white;
+  max-width: 100%; }
+
+.show {
+  position: relative;
+  background: white;
+  cursor: pointer;
+  width: auto;
+  float: left;
+  margin: 10px;
+  padding: 5px;
+  margin: 5px;
+  padding: 10px;
+  list-style: none;
+  box-shadow: 2px 5px 0px black;
+  left: 0;
+  top: 0;
+  font-family: "Cabin", sans-serif;
+  transition: box-shadow .4s, top .3s ease-out, left .3s ease-out; }
+  .show:hover {
+    box-shadow: 5px 7px 7px #555;
+    top: -2px;
+    left: -2px; }
+
+button, a.home-link {
+  position: relative;
+  font-family: "Cabin", sans-serif;
+  font-size: 1rem;
+  padding: .5rem;
+  margin: 0.5rem 0;
+  background: #9BE0B6;
+  border: none;
+  color: #006750;
+  z-index: 999;
+  box-shadow: 0px 0px 0 #006750;
+  transition: box-shadow .3s; }
+  button:hover, a.home-link:hover {
+    box-shadow: 5px 5px 0 #006750;
+    transition: box-shadow .1s ease-in-out; }
+  button:active, a.home-link:active {
+    box-shadow: 7px 7px 10px #006750; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  height: 100%; }
+
+a {
+  text-decoration: none;
+  color: #f1f1f1; }
+  a:hover {
+    color: #FE0046; }
+
+.wrapper {
+  max-width: 1080px;
+  width: 90%;
+  margin: 0 auto;
+  transition: width .2s; }
+
+.swal-button {
+  background: #FE0046; }
+
+.App {
+  height: 100vh;
+  max-height: 100vh;
+  background: #f1f1f1;
+  overflow-y: scroll; }
+
+.row {
+  width: 100%;
+  display: block; }
+
+.fridge {
+  max-height: 100vh; }
+
+.fridge-header, .poem-header {
+  height: 15vh;
+  width: 100%; }
+
+.fridge-logo {
+  width: 70%;
+  float: left;
+  text-align: left;
+  margin-top: 0;
+  height: 50px; }
+
+.fridge-logo img, .poem-logo img {
+  height: 50px;
+  width: auto; }
+
+.share-poem, a.home-link, .make-own {
+  display: block;
+  margin: 5px;
+  margin-top: 0;
+  width: calc(50% - 10px);
+  text-align: center;
+  text-decoration: none;
+  float: left;
+  padding: 15px 0;
+  height: 50px;
+  color: black; }
+
+.fridge-nav {
+  width: 30%;
+  float: left; }
+
+.poem-dashboard {
+  float: left;
+  margin: 1rem 2rem 0 0;
+  width: calc(30% - 2rem);
+  height: 95vmin;
+  text-align: center;
+  overflow-y: scroll; }
+  .poem-dashboard .show {
+    background: #f1f1f1; }
+  .poem-dashboard ul {
+    width: 100%; }
+
+.poem-page {
+  position: relative;
+  overflow: hidden; }
+  .poem-page .fridge-container {
+    margin: 0 auto;
+    display: block;
+    float: none;
+    width: 55%;
+    height: 76vh;
+    overflow: hidden; }
+
+.poem-logo {
+  width: 80%;
+  float: left;
+  text-align: left;
+  margin: 0;
+  height: 50px; }
+
+.poem-nav {
+  width: 20%;
+  float: left; }
+
+.make-own {
+  width: 100%;
+  float: none; }
+
+.swal-text {
+  text-align: center; }
+
+.main-section {
+  height: 95vh;
+  padding-top: 30px; }
+
+.fridge-container {
+  background: url(./assets/fridge.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding: 4rem 6rem;
+  height: 100vh;
+  float: left;
+  width: 70%;
+  border-radius: 1rem; }
+
+.main-form {
+  text-align: center;
+  position: relative; }
+  .main-form:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover; }
+  .main-form h1 {
+    font-size: 1rem; }
+  .main-form h3 {
+    margin: .25rem 0; }
+  .main-form fieldset {
+    border: none; }
+    .main-form fieldset label {
+      text-align: center;
+      display: inline-block;
+      min-height: 5rem;
+      width: 12%;
+      padding: .5rem;
+      transition: background .3s;
+      transition: width .2s;
+      color: #006750; }
+      .main-form fieldset label:hover {
+        background: #9BE0B6; }
+    .main-form fieldset img {
+      width: 3vmax; }
+    .main-form fieldset h3 {
+      font-size: .8rem;
+      margin: .5rem 0; }
+  .main-form input[type="radio"]:checked + label {
+    border: 3px solid black; }
+
+input[type=radio] {
+  display: none; }
+
+label {
+  font-family: "Cabin", sans-serif; }
+
+.logo {
+  width: 50vmin; }
+
+.search-bar label {
+  position: relative;
+  top: -100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: top .3s ease-out, transform .3s ease-out; }
+
+.search-bar input {
+  width: 70%;
+  float: left;
+  padding: .5rem;
+  position: relative;
+  background: transparent;
+  border-radius: 0;
+  border: 3px solid #006750;
+  text-align: center; }
+
+.search-container {
+  padding: 0 15vmax;
+  margin: 2.5rem 0 0; }
+
+.topic-container {
+  position: relative;
+  clear: both;
+  margin-top: 7rem; }
+
+.search-words {
+  width: calc(30% - 5px);
+  float: left;
+  margin: 0;
+  padding: 0.5rem;
+  border: 3px solid transparent;
+  margin-left: 5px; }
+
+.category-options {
+  display: block;
+  width: 100%; }
+
+footer {
+  height: 5vh;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  color: #006750; }
+  footer a {
+    color: inherit; }
+
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+  .wrapper {
+    width: 95%; }
+  .main-form fieldset label {
+    width: 15%; }
+  .fridge-container {
+    width: 60%;
+    padding: 4rem 6rem; }
+  .poem-dashboard {
+    width: 33%; }
+  .poem-page .fridge-container {
+    width: 80%; } }
+
+@media (max-width: 820px) {
+  .main-section {
+    height: auto; }
+  footer {
+    height: auto; } }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 90%; }
+  .main-form .search-bar {
+    transition: padding .2s;
+    margin-bottom: 2rem; }
+  .main-form fieldset label {
+    width: 20%; }
+  .search-container {
+    padding: 0; }
+  .fridge .fridge-container {
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: auto 0;
+    padding: 4rem 6rem; }
+  .fridge-logo, .fridge-nav, .poem-logo, .poem-nav {
+    width: 50%; }
+  .poem-dashboard {
+    height: 8rem;
+    width: 100%;
+    margin: 0 0 2rem;
+    float: left;
+    border: 2px solid silver;
+    padding-top: 0; }
+    .poem-dashboard p {
+      margin: .25rem 0; }
+  .poem-page .fridge-container {
+    width: 90%; }
+  .poem-page header p {
+    display: none; } }
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .wrapper {
+    width: 95%; }
+  .main-form .search-bar {
+    padding: 0 5%; }
+  .main-form fieldset label {
+    position: relative;
+    width: 100%; }
+    .main-form fieldset label h3, .main-form fieldset label img {
+      float: left; }
+    .main-form fieldset label h3 {
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      left: 25%;
+      transform: translateY(-50%);
+      font-size: 1rem; }
+  .main-form fieldset img {
+    width: 5vmax;
+    margin: 0.5rem 0; }
+  .main-section {
+    height: auto; }
+  .search-container button, .search-container input {
+    display: block;
+    width: 100%; }
+  .search-container button {
+    margin-left: 0;
+    margin-top: 1rem; }
+  .fridge .fridge-container {
+    padding: 1rem 1rem 1rem 4rem; }
+  .poem-dashboard {
+    height: 8.5rem;
+    margin-top: 2rem; }
+  .poem-page .fridge-container {
+    width: 100%;
+    padding: 1rem 1rem 1rem 4rem; }
+  .fridge-logo, .fridge-nav {
+    width: 100%;
+    display: block; }
+  .poem-nav {
+    width: 40%;
+    margin-left: 1.5rem; } }

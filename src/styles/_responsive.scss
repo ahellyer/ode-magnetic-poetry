@@ -1,0 +1,161 @@
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+    .wrapper{
+        width: 95%;
+    }
+    .main-form{
+        fieldset{
+            label{
+                width: 15%;
+            }
+        }
+    }
+    .fridge-container{
+        width: 60%;
+        padding: 4rem 6rem;
+    }
+    .poem-dashboard{
+      width: 33%;
+    }
+    .poem-page{
+        .fridge-container{
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: 820px) {
+    .main-section {
+        height: auto;
+    }
+    footer {
+        height: auto;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+    .wrapper{
+        width: 90%;
+    }
+    .main-form{
+        .search-bar{
+            transition: padding .2s;
+            margin-bottom: 2rem;
+        }
+        fieldset{
+            label{
+                width: 20%;
+            }
+        }
+    }
+    .search-container{
+      padding: 0;
+    }
+    .fridge .fridge-container{
+        // @include position(absolute,40%,0,0,50%);
+        // transform: translateX(-50%);
+        width: 100%;
+        float: none;
+        clear: both;
+        margin: auto 0;
+        padding: 4rem 6rem;
+    }
+    .fridge-logo, .fridge-nav, .poem-logo, .poem-nav{
+        width: 50%;
+    }
+    .poem-dashboard{
+        height: 8rem;
+        width: 100%;
+        margin: 0 0 2rem;
+        float: left;
+        border: 2px solid silver;
+        padding-top: 0;
+        p{
+            margin: .25rem 0;
+        }
+    }
+    .poem-page{
+        .fridge-container{
+            width: 90%;
+        }
+        header{
+          p{
+            display: none;
+          }
+        }
+    }
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    .wrapper{
+        width: 95%;
+    }
+    .main-form{
+        .search-bar{
+            padding:  0 5%;
+        }
+        fieldset{
+            label{
+                position: relative;
+                width: 100%;
+                h3, img{
+                    // display: inline-block;
+                    float: left;
+                }
+                h3{
+                    position: absolute;
+                    top: 50%; 
+                    bottom: 0;
+                    left: 25%;
+                    // @include position(absolute, 50%,0,0,50%);
+                    transform: translateY(-50%);
+                    // margin-left: 3rem;
+                    font-size: 1rem;
+                }
+
+            }
+            img{
+                width: 5vmax;
+                margin: 0.5rem 0;
+            }
+        }
+    }
+    .main-section {
+        height: auto;
+    }
+    .search-container{
+      button, input{
+        display: block;
+        width: 100%;
+      }
+      button{
+        margin-left: 0;
+        margin-top: 1rem;
+      }
+    }
+    .fridge .fridge-container{
+        padding: 1rem 1rem 1rem 4rem;
+    }
+    .poem-dashboard{
+        height: 8.5rem;
+        margin-top: 2rem;
+        // width: 95%;
+    }
+    .poem-page{
+        .fridge-container{
+            width: 100%;
+            padding: 1rem 1rem 1rem 4rem;
+        }
+    }
+    .fridge-logo, .fridge-nav{
+        width: 100%;
+        display: block;
+    }
+    .poem-nav{
+      // margin: .5rem 0;
+      // display: inline-block;
+      width: 40%;
+      margin-left: 1.5rem;
+    }
+}
