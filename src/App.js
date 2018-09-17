@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Form from './components/Form';
 import Poem from './components/Poem';
 import Fridge from './components/Fridge';
+import Gallery from './components/Gallery';
 
 class App extends Component {
   constructor() {
@@ -42,8 +43,23 @@ class App extends Component {
               <Route path="/poem/:poemKey" render={(props) =>
                 <Poem {...props} selectedWords={this.state.selectedWords} passChildState={this.passChildState}/>}
               />
+
+              <Route path="/gallery" render={(props) =>
+                <Gallery {...props}/>}
+              />
+
+
             </main>
           </div>
+          <footer>
+            Made by
+              <a href="http://www.ashleyhellyer.com"> Ashley </a>
+            &
+               <a href="http://www.shaikirmanicodes.com"> Shai </a>
+            &
+               <a href="http://www.spen.io"> Spencer </a>
+            2018 &copy;
+          </footer>
         </div>
       </Router>
     );

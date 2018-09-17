@@ -144,6 +144,29 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box;
   font-family: "Cabin", sans-serif; }
 
+.App {
+  display: flex;
+  flex-direction: column; }
+
+.App {
+  height: 100vh;
+  max-height: 100vh;
+  background: #f1f1f1;
+  overflow-y: scroll; }
+
+.main-section {
+  padding-top: 30px; }
+
+.wrapper {
+  flex: 1 0 auto; }
+
+footer {
+  flex-shrink: 0;
+  background: #D3D0CB;
+  z-index: 10; }
+  footer a {
+    color: #333333; }
+
 h1 {
   font-family: "Varela Round", sans-serif;
   text-align: center; }
@@ -180,9 +203,9 @@ button, a.home-link {
   font-size: 1rem;
   padding: .5rem;
   margin: 0.5rem 0;
-  background: #9BE0B6;
+  background: #C5E7E2;
   border: none;
-  color: #006750;
+  color: #333333;
   z-index: 999;
   box-shadow: 0px 0px 0 #006750;
   transition: box-shadow .3s; }
@@ -191,6 +214,17 @@ button, a.home-link {
     transition: box-shadow .1s ease-in-out; }
   button:active, a.home-link:active {
     box-shadow: 7px 7px 10px #006750; }
+
+.gallery-nav {
+  width: calc(20% - 10px);
+  float: left; }
+
+.gallery-nav a.home-link {
+  width: 100%; }
+
+.gallery-header {
+  margin-left: 10px;
+  margin-right: 10px; }
 
 ul {
   list-style: none;
@@ -209,21 +243,20 @@ a {
   margin: 0 auto;
   transition: width .2s; }
 
-.swal-button {
-  background: #FE0046; }
+.gallery-button {
+  padding: 10px; }
 
-.App {
-  height: 100vh;
-  max-height: 100vh;
-  background: #f1f1f1;
-  overflow-y: scroll; }
+.swal-button {
+  background: #C5E7E2;
+  color: #333333; }
 
 .row {
   width: 100%;
   display: block; }
 
-.fridge {
-  max-height: 100vh; }
+.swal-text {
+  text-align: center;
+  color: #333333; }
 
 .fridge-header, .poem-header {
   height: 15vh;
@@ -268,6 +301,17 @@ a {
   .poem-dashboard ul {
     width: 100%; }
 
+.fridge-container {
+  background: url(./assets/fridge.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding: 4rem 7rem;
+  height: 100vh;
+  float: left;
+  width: 70%;
+  border-radius: 1rem; }
+
 .poem-page {
   position: relative;
   overflow: hidden; }
@@ -294,35 +338,32 @@ a {
   width: 100%;
   float: none; }
 
-.swal-text {
-  text-align: center; }
-
-.main-section {
-  height: 95vh;
-  padding-top: 30px; }
-
-.fridge-container {
-  background: url(./assets/fridge.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: top;
-  padding: 4rem 6rem;
-  height: 100vh;
-  float: left;
-  width: 70%;
-  border-radius: 1rem; }
+.list-holder {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; }
+  .list-holder ul {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    background: #C5E7E2;
+    height: 250px;
+    position: relative;
+    padding-top: 20px;
+    padding-left: 20px; }
+  .list-holder ul::before {
+    content: "";
+    height: 75px;
+    width: 10px;
+    background: #666666;
+    border-radius: 5px;
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 10px; }
 
 .main-form {
   text-align: center;
   position: relative; }
-  .main-form:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover; }
   .main-form h1 {
     font-size: 1rem; }
   .main-form h3 {
@@ -333,18 +374,22 @@ a {
       text-align: center;
       display: inline-block;
       min-height: 5rem;
-      width: 12%;
+      font-weight: lighter;
       padding: .5rem;
       transition: background .3s;
       transition: width .2s;
-      color: #006750; }
+      color: #C5E7E2; }
       .main-form fieldset label:hover {
-        background: #9BE0B6; }
+        cursor: pointer; }
     .main-form fieldset img {
-      width: 3vmax; }
+      width: 80%; }
     .main-form fieldset h3 {
-      font-size: .8rem;
-      margin: .5rem 0; }
+      font-size: 1rem;
+      margin: .5rem 0;
+      color: #333333;
+      font-family: "Varela Round", sans-serif; }
+      .main-form fieldset h3:hover {
+        background: #C5E7E2; }
   .main-form input[type="radio"]:checked + label {
     border: 3px solid black; }
 
@@ -357,41 +402,34 @@ label {
 .logo {
   width: 50vmin; }
 
-.search-bar label {
-  position: relative;
-  top: -100%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  transition: top .3s ease-out, transform .3s ease-out; }
-
-.search-bar input {
-  width: 70%;
-  float: left;
-  padding: .5rem;
-  position: relative;
-  background: transparent;
-  border-radius: 0;
-  border: 3px solid #006750;
-  text-align: center; }
-
 .search-container {
   padding: 0 15vmax;
   margin: 2.5rem 0 0; }
+
+.search-bar {
+  display: flex;
+  align-items: stretch; }
+  .search-bar input {
+    width: 70%;
+    padding: .5rem;
+    position: relative;
+    background: transparent;
+    border: 3px solid #333333;
+    text-align: center; }
+
+.search-words {
+  width: calc(30% - 5px);
+  padding: 0.5rem;
+  margin: 0;
+  border: 3px solid transparent;
+  margin-left: 5px;
+  background: #C5E7E2;
+  color: #333333; }
 
 .topic-container {
   position: relative;
   clear: both;
   margin-top: 7rem; }
-
-.search-words {
-  width: calc(30% - 5px);
-  float: left;
-  margin: 0;
-  padding: 0.5rem;
-  border: 3px solid transparent;
-  margin-left: 5px; }
 
 .category-options {
   display: block;
@@ -401,17 +439,12 @@ footer {
   height: 5vh;
   padding: 10px;
   text-align: center;
-  width: 100%;
-  color: #006750; }
-  footer a {
-    color: inherit; }
+  width: 100%; }
 
 /* Portrait tablet and small desktops */
 @media (max-width: 940px) {
   .wrapper {
     width: 95%; }
-  .main-form fieldset label {
-    width: 15%; }
   .fridge-container {
     width: 60%;
     padding: 4rem 6rem; }
@@ -433,8 +466,6 @@ footer {
   .main-form .search-bar {
     transition: padding .2s;
     margin-bottom: 2rem; }
-  .main-form fieldset label {
-    width: 20%; }
   .search-container {
     padding: 0; }
   .fridge .fridge-container {
@@ -467,27 +498,18 @@ footer {
     padding: 0 5%; }
   .main-form fieldset label {
     position: relative;
-    width: 100%; }
-    .main-form fieldset label h3, .main-form fieldset label img {
-      float: left; }
+    width: 80%;
+    min-height: auto;
+    padding: 0; }
     .main-form fieldset label h3 {
-      position: absolute;
-      top: 50%;
-      bottom: 0;
-      left: 25%;
-      transform: translateY(-50%);
-      font-size: 1rem; }
-  .main-form fieldset img {
-    width: 5vmax;
-    margin: 0.5rem 0; }
+      width: 100%; }
   .main-section {
     height: auto; }
   .search-container button, .search-container input {
     display: block;
     width: 100%; }
   .search-container button {
-    margin-left: 0;
-    margin-top: 1rem; }
+    margin-left: 0; }
   .fridge .fridge-container {
     padding: 1rem 1rem 1rem 4rem; }
   .poem-dashboard {

@@ -3,19 +3,12 @@
     .wrapper{
         width: 95%;
     }
-    .main-form{
-        fieldset{
-            label{
-                width: 15%;
-            }
-        }
-    }
     .fridge-container{
         width: 60%;
         padding: 4rem 6rem;
     }
     .poem-dashboard{
-      width: 33%;
+        width: 33%;
     }
     .poem-page{
         .fridge-container{
@@ -43,18 +36,11 @@
             transition: padding .2s;
             margin-bottom: 2rem;
         }
-        fieldset{
-            label{
-                width: 20%;
-            }
-        }
     }
     .search-container{
-      padding: 0;
+        padding: 0;
     }
     .fridge .fridge-container{
-        // @include position(absolute,40%,0,0,50%);
-        // transform: translateX(-50%);
         width: 100%;
         float: none;
         clear: both;
@@ -80,9 +66,9 @@
             width: 90%;
         }
         header{
-          p{
-            display: none;
-          }
+            p{
+                display: none;
+            }
         }
     }
 }
@@ -98,26 +84,16 @@
         fieldset{
             label{
                 position: relative;
-                width: 100%;
-                h3, img{
-                    // display: inline-block;
-                    float: left;
-                }
+                width: 80%;
+                min-height: auto;
+                padding: 0;
+                // h3, img{
+                //     // display: inline-block;
+                //     float: left;
+                // }
                 h3{
-                    position: absolute;
-                    top: 50%; 
-                    bottom: 0;
-                    left: 25%;
-                    // @include position(absolute, 50%,0,0,50%);
-                    transform: translateY(-50%);
-                    // margin-left: 3rem;
-                    font-size: 1rem;
+                    width: 100%;
                 }
-
-            }
-            img{
-                width: 5vmax;
-                margin: 0.5rem 0;
             }
         }
     }
@@ -125,14 +101,13 @@
         height: auto;
     }
     .search-container{
-      button, input{
-        display: block;
-        width: 100%;
-      }
-      button{
-        margin-left: 0;
-        margin-top: 1rem;
-      }
+        button, input{
+            display: block;
+            width: 100%;
+        }
+        button{
+            margin-left: 0;
+        }
     }
     .fridge .fridge-container{
         padding: 1rem 1rem 1rem 4rem;
@@ -140,7 +115,6 @@
     .poem-dashboard{
         height: 8.5rem;
         margin-top: 2rem;
-        // width: 95%;
     }
     .poem-page{
         .fridge-container{
@@ -153,9 +127,7 @@
         display: block;
     }
     .poem-nav{
-      // margin: .5rem 0;
-      // display: inline-block;
-      width: 40%;
-      margin-left: 1.5rem;
+        width: 40%;
+        margin-left: 1.5rem;
     }
 }

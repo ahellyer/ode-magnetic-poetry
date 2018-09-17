@@ -124,7 +124,7 @@ class Fridge extends Component{
 
         const poemKey = dbRef.push(this.state.selectedWords).key;
         //update URL path to go to poem component 
-        swal("You are a poetic genius.", `Share your poem with all your friends with this URL: www.magnetic-poetry.firebaseapp.com/poem/${poemKey}`);
+        swal("You are a poetic genius.", `Share your poem with all your friends with this URL: magnet-poetry.firebaseapp.com/poem/${poemKey}`);
         this.props.history.push(`/poem/${poemKey}`)
       })
 
@@ -183,7 +183,7 @@ class Fridge extends Component{
               </Droppable>
             </div>
             <div className="fridge-container" >
-              <Droppable droppableId="droppable">
+              <Droppable droppableId="droppable" direction="horizontal">
                 {(provided, snapshot) => (
                   <ul
                     id="fridge-words"

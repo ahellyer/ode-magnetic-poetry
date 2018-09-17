@@ -6,12 +6,18 @@ import Filter from 'bad-words';
 import swal from 'sweetalert';
 import Mousetrap from 'mousetrap';
 
+
 // IMAGES
-import LoveIcon from '../assets/cupid.svg';
-import YogaIcon from '../assets/yoga.svg';
-import ApocalypseIcon from '../assets/apocalypse.svg';
-import AstrologyIcon from '../assets/astrology.svg';
-import ShakespeareIcon from '../assets/shakespeare.svg';
+// import LoveIcon from '../assets/cupid.svg';
+// import YogaIcon from '../assets/yoga.svg';
+// import ApocalypseIcon from '../assets/apocalypse.svg';
+// import AstrologyIcon from '../assets/astrology.svg';
+// import ShakespeareIcon from '../assets/shakespeare.svg';
+import love from '../assets/love.svg'
+import apocalypse from '../assets/apocalypse2.svg'
+import yoga from '../assets/yoga2.svg'
+import shakespeare from '../assets/shakespeare2.svg'
+import zodiac from '../assets/zodiac.svg'
 import OdeLogo from '../assets/odeLogo.svg';
 
 //empty wordlist that gets populated with words on submit of form
@@ -69,28 +75,12 @@ class Form extends Component {
   }
 
   toggleRadio = (e) => {
-    // If a topic has been selected already and if e.target is a radio button...
-    if (this.state.topicSelected && e.target.type === "radio" ){
-      // uncheck the input
-      e.target.checked = false
-
-      // change state to reflect a topic being unselected
-      this.setState({
-        topicSelected: false,
-        queryInput: '',
-      })
-    //  if a topic has not been selected...
-    } else if (e.target.type === "radio" ){
-
-      // set the input that was clicked to checked
-      e.target.checked = true;
-
-      // change state to reflect that a topic has been selected
       this.setState({
         topicSelected: true,
         queryInput: e.target.value,
+      }, () => {
+        this.setWordList();
       })
-    }
   }
 
   getElementOnClick = (e) => {
@@ -149,7 +139,7 @@ class Form extends Component {
 
     // A conditional to get us shakespearean words
     if(this.state.queryInput === "Shakespeare"){
-      wordList = ['if', 'the', 'a', 'it', 'ly', 'ing', 'd', 'ed', 'ful', 'y', 'anti', 'un', 're', '!', '?', 'his', 'her']
+      wordList = ['if', 'the', 'a', 'it', 'ly', 'dost', 'd', 'wouldst', 'ful', 'thou', 'anti', 'un', 're', '!', '?', 'his', 'her']
       this.getWordsQuery('rel_trg', 'thou', 15).then(({data}) => {
         data.map((word) => wordList.push(word.word.toLowerCase()))
         console.log(wordList);
@@ -187,10 +177,14 @@ class Form extends Component {
     })
   }
 
+  goToGallery = () => {
+    this.props.history.push(`/gallery`)
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     if (!this.state.queryInput) {
-      return swal('To make a poem, you need to enter a word in, silly!')
+      return swal('To make a poem, you need to pick a topic, silly!')
     } else {
       this.setWordList()
     }
@@ -213,7 +207,7 @@ class Form extends Component {
                   <label className="visuallyhidden" htmlFor="queryInput">
                     <h3>Enter a poem topic to get words</h3>
                   </label>
-                  <button className="search-words" type="submit">Give me Words</button>
+                  <button className="search-words" type="submit">Go to the Fridge!</button>
             </div>
               {this.state.queryInput ?
                 <ul>
@@ -227,51 +221,45 @@ class Form extends Component {
                 </ul> : null}
           </div>
           <div className="topic-container">
-            <h3 className="row">or pick one of ours...</h3>
+            <h3 className="row">or start with one of ours...</h3>
             <fieldset className="category-options clearfix">
 
               <input onBlur={this.handleChange} onClick={this.toggleRadio} type="radio" name="category" value="Shakespeare" id="shakespeare" />
               <label htmlFor="shakespeare">
-                <img src={ShakespeareIcon} alt="Make a poem based on the 'Shakespeare' topic" />
-                <h3>Shakespeare</h3>
+                {/* <img src={shakespeare} alt="Make a poem based on the 'Shakespeare' topic" /> */}
+                <h3 className="show">Shakespeare</h3>
               </label>
 
               <input onBlur={this.handleChange} onClick={this.toggleRadio} type="radio" name="category" value="Love" id="love" />
               <label htmlFor="love">
-                <img src={LoveIcon} alt="Make a poem based on the 'Love' topic"/>
-                <h3>Love</h3>
+                {/* <img src={love} alt="Make a poem based on the 'Love' topic"/> */}
+                <h3 className="show">Love</h3>
               </label>
 
               <input onBlur={this.handleChange} onClick={this.toggleRadio} type="radio" name="category" value="Yoga" id="yoga" />
               <label htmlFor="yoga">
-                <img src={YogaIcon} alt="Make a poem based on the 'Yoga' topic" />
-                <h3>Yoga</h3>
+                {/* <img src={yoga} alt="Make a poem based on the 'Yoga' topic" /> */}
+                <h3 className="show">Yoga</h3>
               </label>
 
               <input onBlur={this.handleChange} onClick={this.toggleRadio} type="radio" name="category" value="Astrology" id="astrology" />
               <label htmlFor="astrology">
-                <img src={AstrologyIcon} alt="Make a poem based on the 'Astrology' topic" />
-                <h3>Astrology</h3>
+                {/* <img src={zodiac} alt="Make a poem based on the 'Astrology' topic" /> */}
+                <h3 className="show">Astrology</h3>
               </label>
 
               <input onBlur={this.handleChange} onClick={this.toggleRadio} type="radio" name="category" value="Apocalypse" id="apocalypse" />
               <label htmlFor="apocalypse">
-                <img src={ApocalypseIcon} alt="Make a poem based on the 'Apocalypse' topic" />
-                <h3>Apocalypse</h3>
+                {/* <img src={apocalypse} alt="Make a poem based on the 'Apocalypse' topic" /> */}
+                <h3 className="show">Apocalypse</h3>
               </label>
             </fieldset>
 
+            <button className="gallery-button" onClick={this.goToGallery}>View the Gallery</button>
+
           </div>
         </form>
-        <footer>
-          Made by
-              <a href="http://www.ashleyhellyer.com"> Ashley </a>
-          &
-               <a href="http://www.shaikirmanicodes.com"> Shai </a>
-          &
-               <a href="http://www.spen.io"> Spencer </a>
-          2018 &copy;
-          </footer>
+        
       </section>
     )
   }
